@@ -5,17 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mbardett <mbardett@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/13 18:44:45 by mbardett          #+#    #+#              #
-#    Updated: 2023/08/16 18:15:27 by mbardett         ###   ########.fr        #
+#    Created: 2023/08/16 22:18:18 by mbardett          #+#    #+#              #
+#    Updated: 2023/08/16 22:42:06 by mbardett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = unnecessary_violence
+NAME = Karen
 
-SRC = Weapon.cpp \
-	HumanA.cpp \
-	HumanB.cpp \
-	main.cpp 
+SRC = Harl.cpp \
+		main.cpp 
 
 OBJ = $(SRC:.cpp = .o)
 
@@ -41,7 +39,7 @@ RED = \033[38;5;160m
 	@$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
-	@echo "$(RED)KNOCK KNOCK$(RESET)"
+	@echo "$(RED)EXCUSE ME!?!$(RESET)"
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 $(NAME): $(OBJ)

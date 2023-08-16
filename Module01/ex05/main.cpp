@@ -5,30 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbardett <mbardett@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 18:45:49 by mbardett          #+#    #+#             */
-/*   Updated: 2023/08/16 18:58:01 by mbardett         ###   ########.fr       */
+/*   Created: 2023/08/16 22:18:27 by mbardett          #+#    #+#             */
+/*   Updated: 2023/08/16 22:45:27 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-int main() 
-{
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
+int main(void) {
+    Harl        harl;
+    std::string input;
+    
+    // std::cout << "Once You've heard enough complainings just type EXIT." << std::endl;
+    do {
+        std::cout << "Input difficulty level, DEBUG, INFO, WARNING or ERROR" << std::endl;
+		std::cout << "Once You've heard enough complainings just type EXIT." << std::endl;
+        std::cin >> input;
+        if (std::cin.eof()) {
+            return (1);
+        }
+        harl.complain(input);
+    } while (input.compare("EXIT"));
+    return 0;
 }

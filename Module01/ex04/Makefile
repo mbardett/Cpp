@@ -5,17 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mbardett <mbardett@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/13 18:44:45 by mbardett          #+#    #+#              #
-#    Updated: 2023/08/16 18:15:27 by mbardett         ###   ########.fr        #
+#    Created: 2023/08/16 19:01:15 by mbardett          #+#    #+#              #
+#    Updated: 2023/08/16 19:01:54 by mbardett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = unnecessary_violence
+NAME = sed
 
-SRC = Weapon.cpp \
-	HumanA.cpp \
-	HumanB.cpp \
-	main.cpp 
+SRC = main.cpp 
 
 OBJ = $(SRC:.cpp = .o)
 
