@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:17:56 by mbardett          #+#    #+#             */
-/*   Updated: 2023/08/13 17:54:42 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:13:18 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 	{
 		if (!isdigit(input[i]))
 		{
-			std::cout << "please insert only numbers" << std::endl;
+			std::cout << "test suspended, next time please insert only numbers" << std::endl;
 			break;
 		}
 		i++;

@@ -6,13 +6,14 @@
 /*   By: mbardett <mbardett@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 22:18:27 by mbardett          #+#    #+#             */
-/*   Updated: 2023/08/16 22:45:27 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/08/18 15:18:23 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(void) {
+int main(void)
+{
     Harl        harl;
     std::string input;
     
