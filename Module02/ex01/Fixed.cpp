@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 19:20:01 by mbardett          #+#    #+#             */
-/*   Updated: 2023/08/18 21:48:35 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/08/19 18:00:57 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,20 @@ Fixed &Fixed::operator=(const Fixed &source)
 	return (*this);
 }
 
-Fixed::Fixed(const int inum)
+Fixed::Fixed(const int inum):_fixedNumValue (inum << _fractionalBits)
 {
-	this->_fixedNumValue = inum;
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float fnum): _fixedNumValue(roundf(fnum * (1 << this->_fractionalBits)))
+Fixed::Fixed(const float fnum)
 {
-	this->_fixedNumValue = fnum;
+	this->_fixedNumValue = roundf(fnum * (1 << _fractionalBits));
 	std::cout << "Float constructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called"<< std::endl;
+	// std::cout << "getRawBits member function called"<< std::endl;
 	return (this->_fixedNumValue);
 }
 
@@ -58,14 +57,14 @@ void Fixed::setRawBits(int const raw)
 	this->_fixedNumValue = raw;
 }
 
-float Fixed::toFloat() const
+float Fixed::toFloat(void) const
 {
-	return ((float)this->_fixedNumValue / (1 << this->_fractionalBits));
+	return ((float)this->_fixedNumValue / (1 << _fractionalBits));
 }
 
 int Fixed::toInt() const
 {
-	return ((roundf(this->_fixedNumValue)));
+	return ((this->_fixedNumValue >>_fractionalBits));
 }
 
 std::ostream &operator<<(std::ostream &output, const Fixed &source)
