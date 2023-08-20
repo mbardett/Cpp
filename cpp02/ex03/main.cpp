@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 19:27:34 by mbardett          #+#    #+#             */
-/*   Updated: 2023/08/19 22:22:54 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/08/20 14:51:47 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,21 @@
 
 int main( void ) {
 
-	Point inside(7.78, 2.38);
-	Point outside(4.72, 0.24);
-	Point edge(10.85, 1.96);
-	Point vertex(4.6, -1.02);
-	Point a(4.6, -1.02);
-	Point b(6.3, 4.38);
-	Point c(12.14, 2.58);
+	// Point inside(7.78, 2.38);
+	// Point outside(4.72, 0.24);
+	// Point edge(10.85, 1.96);
+	// Point vertex(4.6, -1.02);
+	// Point a(4.6, -1.02);
+	// Point b(6.3, 4.38);
+	// Point c(12.14, 2.58);
+
+	Point inside(3.0, 2.0);
+	Point outside(7.0, 6.0);
+	Point edge(3.0, 0.0);
+	Point vertex(3.0, 5.0);
+	Point a(0.0, 0.0);
+	Point b(6.0, 0.0);
+	Point c(3.0, 5.0);
 
 	std::cout << "VERTICES OF THE TRIANGLE" << std::endl;
 	std::cout << "(" << a.getX() << ";" << a.getY() << ")" << std::endl;
