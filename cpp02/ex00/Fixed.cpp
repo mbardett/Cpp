@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbardett <mbardett@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 19:20:01 by mbardett          #+#    #+#             */
-/*   Updated: 2023/08/18 21:26:17 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/03 18:21:09 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Fixed::Fixed(): _fixedNumValue(0)
 {
-	std::cout << "Defaule constructor called" << std::endl;	
+	std::cout << "Default constructor called" << std::endl;	
 }
 
 Fixed::~Fixed()
