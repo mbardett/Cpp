@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:15 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/02 21:51:25 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/03 17:03:42 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@ ScavTrap::ScavTrap()
 	this->setHp(100);
 	this->setAtkDmg(20);
 	this->setEnergy(50);
-	std::cout << "default Scav constructor called" << std::endl;
+	std::cout << "Scav constructor called" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
 	std::cout << "Scav deconstructor called" << std::endl;
-	std::cout << "ScavTrap " << this->getName() << "copy constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &source) : ClapTrap(source)

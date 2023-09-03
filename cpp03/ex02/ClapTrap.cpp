@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:42 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/02 21:49:35 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/03 17:45:41 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default ClapTrap constructor called" << std::endl;
 }
 ClapTrap::ClapTrap(std::string name)
 {
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << this->_name << " Deconstructor called" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " Deconstructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &source)
@@ -81,7 +81,7 @@ void ClapTrap::setAtkDmg(int n)
 
 void ClapTrap::setHp(int amount)
 {
-	this->_HitPoints += amount;
+	this->_HitPoints = amount;
 }
 
 void ClapTrap::setEnergy(int n)
@@ -104,7 +104,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	std::cout << "ClapTrap "<< this->_name << " gets hit";
 	std::cout << ", receiving " <<  amount << " points of damage!" << std::endl;
 	if (this->_HitPoints <= 0)
-		std::cout << this->_name <<" died" << std::endl;
+		std::cout << this->_name <<"\033[38;5;160m died!\033[0m" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
