@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:42 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/03 17:45:41 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:50:22 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,15 +92,15 @@ void ClapTrap::attack(const  std::string &target)
 {
 	if (!this->_EnergyPoints)
 		return;
-	this->setAtkDmg(+1);
-	this->setEnergy(-1);
+	this->setAtkDmg(this->getAtkDmg()+1);
+	this->setEnergy(this->getEnergy()-1);
 	std::cout << "ClapTrap "<< this->_name << " attacks " << target;
 	std::cout << ", causing " << getAtkDmg() << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	setHp( - amount);
+	setHp(getHp() - amount);
 	std::cout << "ClapTrap "<< this->_name << " gets hit";
 	std::cout << ", receiving " <<  amount << " points of damage!" << std::endl;
 	if (this->_HitPoints <= 0)
@@ -109,11 +109,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_HitPoints + amount >= 10)
-		setHp(10 - getHp());
-	else
-		this->_HitPoints += amount;
-	this->_EnergyPoints++;
+
+	this->_HitPoints += amount;
+	this->_EnergyPoints--;
 	std::cout << "ClapTrap "<< this->_name << "is healing ";
 	std::cout << ", restoring " <<  amount << " HP!" << std::endl;
 }

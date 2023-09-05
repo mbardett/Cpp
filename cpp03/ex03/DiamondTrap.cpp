@@ -6,19 +6,20 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 20:39:09 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/03 21:43:52 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/05 17:13:34 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : _name()
+DiamondTrap::DiamondTrap() : _name("QT")
 {
 	this->FragTrap::setHp(FragTrap::getHp());
 	this->FragTrap::setAtkDmg(FragTrap::getAtkDmg());
 	this->ScavTrap::setAtkDmg(ScavTrap::getAtkDmg());
 	ClapTrap::setName(_name + " The Wanderer");
 	std::cout << "DiamondTrap " << this->_name << " custom constructor called" << std::endl;
+	std::cout << this->getAtkDmg() << " = ATTACKDAMAGE" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string name) : _name(name)
@@ -26,7 +27,7 @@ DiamondTrap::DiamondTrap(const std::string name) : _name(name)
 	this->FragTrap::setHp(FragTrap::getHp());
 	this->FragTrap::setAtkDmg(FragTrap::getAtkDmg());
 	this->ScavTrap::setEnergy(ScavTrap::getEnergy());
-	ClapTrap::setName(_name + " The Wanderer");
+	ClapTrap::setName(name + " The Wanderer");
 	std::cout << "DiamondTrap " << this->_name << " custom constructor called" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:15 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/03 17:03:42 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/05 17:59:33 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ScavTrap::ScavTrap(const ScavTrap &source) : ClapTrap(source)
 	*this = source;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(const std::string name)
 {
 	this->setName(name);
 	this->setHp(100);
@@ -53,8 +53,8 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &source)
 void ScavTrap::attack(const std::string &target)
 {
 	std::cout << "ScavTrap " << this->getName() << " attacks " << target << "for " << this->getAtkDmg() << "points of damage!"<< std::endl;
-	this->setAtkDmg(+1);
-	this->setEnergy(-1); 
+	this->setAtkDmg(this->getAtkDmg()+1);
+	this->setEnergy(this->getEnergy()-1); 
 }
 
 void ScavTrap::guardGate()

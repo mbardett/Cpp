@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:56 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/03 21:39:06 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:58:36 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int main ()
 	std::cout << "---> FIGHT TEST WITH DIAMONDTRAP <---" << std::endl;
 	std::cout << std::endl;
 	DiamondTrap diamond("Sparky");
+	
+	diamond.setHp(555);
 	diamond.attack("his enemy");
 	diamond.takeDamage(6);
 	diamond.beRepaired(7);
@@ -31,6 +33,5 @@ int main ()
 
 	std::cout << "---> DESTRUCTIONS <---" << std::endl;
 	std::cout << std::endl;
-
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:47 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/02 21:41:00 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:06:28 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 
 # include <iostream>
 
+//from cppreference.com/w/cpp/language/destructor:
+//Virtual destructors:
+//Deleting an object through pointer to base invokes undefined behavior 
+//unless the destructor in the base class is virtual:
+
 class ClapTrap
 {
-	private:
+	protected:
 		std::string _name;
 		int _HitPoints;
 		int	_EnergyPoints;
