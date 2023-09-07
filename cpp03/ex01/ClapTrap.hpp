@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:47 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/05 18:06:28 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/07 18:14:08 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 class ClapTrap
 {
-	protected:
+	private:
 		std::string _name;
 		int _HitPoints;
 		int	_EnergyPoints;

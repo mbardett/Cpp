@@ -6,15 +6,13 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:42 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/05 14:48:48 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/07 18:29:16 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap() :  _name("Default"), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -90,17 +88,17 @@ void ClapTrap::setEnergy(int n)
 }
 void ClapTrap::attack(const  std::string &target)
 {
-	if (!this->_EnergyPoints)
+	if (this->_EnergyPoints <= 0)
 		return;
-	this->setAtkDmg(+1);
-	this->setEnergy(-1);
+	this->setAtkDmg(this->getAtkDmg()+1);
+	this->setEnergy(this->getEnergy()-1);
 	std::cout << "ClapTrap "<< this->_name << " attacks " << target;
 	std::cout << ", causing " << getAtkDmg() << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	setHp(getHp() - amount);
+	this->setHp(this->getHp() - amount);
 	std::cout << "ClapTrap "<< this->_name << " gets hit";
 	std::cout << ", receiving " <<  amount << " points of damage!" << std::endl;
 	if (this->_HitPoints <= 0)

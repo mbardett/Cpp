@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:39:03 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/05 18:06:17 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:02:05 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class ClapTrap
 		ClapTrap &operator=(const ClapTrap &source);
 		int getAtkDmg();
 		int	getHp();
+		std::string getName();
 		void setAtkDmg(int n);
 		void setHp(int amount);
 		void setEnergy(int n);

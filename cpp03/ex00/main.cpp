@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 20:06:54 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/05 18:25:16 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:05:23 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,17 @@ int main(int argc, char *argv[])
 	ClapTrap c1(name1);
 	ClapTrap c2(name2);
 	
-	while (c1.getHp() != 0 && c2.getHp() != 0)
+	std::cout << c1.getName() <<" has " << c1.getHp() << " HP " << std::endl;
+	std::cout << c2.getName() <<" has " << c2.getHp() << " HP " << std::endl;
+	while (c1.getHp() > 0 && c2.getHp() > 0)
 	{
 		c2.attack(name1);
 		c1.takeDamage(c2.getAtkDmg());
+		std::cout << c1.getName() <<" has " << c1.getHp() << " \033[38;5;70mHP \033[0m" << std::endl;
+		
 		c1.attack(name2);
 		c2.takeDamage(c1.getAtkDmg());
+		std::cout << c2.getName() <<" has " << c2.getHp() << " \033[38;5;70mHP \033[0m" << std::endl;
 	}
 	return(0);
 }
