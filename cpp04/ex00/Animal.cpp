@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:30:44 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/04 21:14:00 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:20:17 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Animal &Animal::operator=(const Animal &source)
 	return (*this);
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
 	std::cout << "Animal makes a very scary sound!" << std::endl;
 }
@@ -44,4 +44,9 @@ void Animal::makeSound()
 std::string Animal::getType() const
 {
 	return (this->_type);
+}
+
+void	Animal::setType(std::string type)
+{
+	this->_type = type;
 }

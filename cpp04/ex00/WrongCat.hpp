@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 21:03:57 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/04 21:29:37 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:25:28 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat(const WrongCat &source);
 		WrongCat &operator=(const WrongCat &source);
 		virtual ~WrongCat(void);
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
 };
 
 #endif

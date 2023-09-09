@@ -6,15 +6,15 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 19:35:29 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/04 21:20:20 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:23:33 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog() : _type("Dog")
 {
-	this->_type = "Dog";
+	this->setType("Dog");
 	std::cout << "Default Dog constructor called" << std::endl;
 }
 
@@ -23,9 +23,9 @@ Dog::~Dog()
 	std::cout << "Default dog destructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &source) :Animal(source)
+Dog::Dog(const Dog &source) :Animal()
 {
-	*this = source;
+	this->_type = source._type;
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 

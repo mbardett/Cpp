@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:15 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/05 17:59:33 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 19:12:48 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &source)
 }
 void ScavTrap::attack(const std::string &target)
 {
-	std::cout << "ScavTrap " << this->getName() << " attacks " << target << "for " << this->getAtkDmg() << "points of damage!"<< std::endl;
+	std::cout << "ScavTrap " << this->getName() << " attacks " << target << " for " << this->getAtkDmg() << " points of damage!"<< std::endl;
 	this->setAtkDmg(this->getAtkDmg()+1);
 	this->setEnergy(this->getEnergy()-1); 
 }

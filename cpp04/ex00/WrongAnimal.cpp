@@ -6,14 +6,16 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 21:00:56 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/04 21:06:33 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:37:41 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void) : _type("WrongAnimal") {
-    std::cout << "Default WrongAnimal constructor called" << std::endl;
+WrongAnimal::WrongAnimal(void) 
+{
+	this->setType("WrongAnimal");
+	std::cout << "Default WrongAnimal constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &src) : _type(src._type) {
@@ -40,4 +42,9 @@ void WrongAnimal::makeSound(void) const
 std::string WrongAnimal::getType(void) const
 {
 	return (this->_type);
+}
+
+void WrongAnimal::setType(std::string const type)
+{
+	this->_type = type;
 }

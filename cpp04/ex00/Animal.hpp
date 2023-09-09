@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:31:02 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/04 21:24:53 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:19:59 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Animal
 		Animal &operator=(const Animal &source);
 		virtual void makeSound()const;
 		std::string getType()const;
+		void setType(std::string type);
 	protected:
 		std::string _type;
 };

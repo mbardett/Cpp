@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:44:18 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/04 21:24:24 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:24:20 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat()
 {
-	this->_type = "Cat";
+	this->setType("Cat");
 	std::cout << "Default Cat constructor called" << std::endl;
 }
 

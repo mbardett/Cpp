@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:42 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/07 18:34:22 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 19:14:56 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void ClapTrap::setName(std::string name)
 
 void ClapTrap::setAtkDmg(int n)
 {
-	this->_AttackDamage += n;
+	this->_AttackDamage = n;
 }
 
 void ClapTrap::setHp(int amount)
@@ -81,7 +81,7 @@ void ClapTrap::setHp(int amount)
 
 void ClapTrap::setEnergy(int n)
 {
-	this->_EnergyPoints +=n;
+	this->_EnergyPoints =n;
 }
 void ClapTrap::attack(const  std::string &target)
 {
@@ -107,6 +107,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 	this->_HitPoints += amount;
 	this->_EnergyPoints--;
-	std::cout << "ClapTrap "<< this->_name << "is healing ";
+	std::cout << "ClapTrap "<< this->_name << "is healing";
 	std::cout << ", restoring " <<  amount << " HP!" << std::endl;
 }

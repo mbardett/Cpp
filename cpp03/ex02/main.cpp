@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:56 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/05 14:52:04 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 19:10:30 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main ()
 	std::cout << "---> FIGHT TEST WITH FRAGTRAP <---" << std::endl;
 	std::cout << std::endl;
 	FragTrap frag ("Kermit");
-	frag.setHp(555);
-	frag.takeDamage(55);
+	// frag.setHp(555);
+	// frag.takeDamage(55);
 	std::cout << "Kermit has " << frag.getHp() << " HP" << std::endl; 
 	frag.highFivesGuys();
 	frag.attack("his enemy");

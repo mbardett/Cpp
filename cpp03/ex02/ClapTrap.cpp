@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:42 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/07 18:32:30 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 19:13:30 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void ClapTrap::setName(std::string name)
 
 void ClapTrap::setAtkDmg(int n)
 {
-	this->_AttackDamage += n;
+	this->_AttackDamage = n;
 }
 
 void ClapTrap::setHp(int amount)
@@ -81,16 +81,16 @@ void ClapTrap::setHp(int amount)
 
 void ClapTrap::setEnergy(int n)
 {
-	this->_EnergyPoints +=n;
+	this->_EnergyPoints =n;
 }
 void ClapTrap::attack(const  std::string &target)
 {
 	if (!this->_EnergyPoints)
 		return;
-	this->setAtkDmg(+1);
-	this->setEnergy(-1);
+	this->setAtkDmg(this->getAtkDmg()+1);
+	this->setEnergy(this->getEnergy()-1);
 	std::cout << "ClapTrap "<< this->_name << " attacks " << target;
-	std::cout << ", causing " << getAtkDmg() << " points of damage!" << std::endl;
+	std::cout << ", causing " << this->getAtkDmg() << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)

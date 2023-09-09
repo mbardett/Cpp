@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:31:52 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/04 21:24:09 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 22:42:11 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat : public Animal
 {
 	public:
 		Cat();
-		virtual ~Cat();
+		~Cat();
 		Cat(const Cat &source);
 		Cat &operator=(const Cat &source);
 		virtual void makeSound()const;

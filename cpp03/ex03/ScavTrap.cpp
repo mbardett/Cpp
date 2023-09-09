@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 14:36:15 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/05 17:17:40 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/09 19:20:32 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,4 @@ void ScavTrap::attack(const std::string &target)
 void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap is now in Gate Keeper mode, and YOU SHALL NOT PASS!!!" << std::endl;
-	std::cout << "YOU SHALL NOT PASS!!!" << std::endl;
 }
