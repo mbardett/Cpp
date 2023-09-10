@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 21:01:48 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 15:09:52 by mbardett         ###   ########.fr       */
+/*   Created: 2023/09/10 16:17:33 by mbardett          #+#    #+#             */
+/*   Updated: 2023/09/10 16:44:45 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include <iostream>
+#include "iostream"
 
-class WrongAnimal 
+class Brain
 {
 	public:
-		WrongAnimal(void);
-		WrongAnimal(const WrongAnimal &source);
-		WrongAnimal &operator=(const WrongAnimal &source);
-		virtual ~WrongAnimal();
-		void makeSound(void) const;
-		std::string getType(void) const;
-		void setType(std::string type);
-	protected:
-		std::string _type;
+		Brain();
+		virtual ~Brain();
+		Brain(const Brain &source);
+		Brain &operator=(const Brain &source);
+		std::string getIdeas(int index);
+		void setIdeas();
+		void printIdeas();
+	
+	private:
+		std::string _ideas[100];
 };
 
 #endif

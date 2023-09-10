@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 21:07:51 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/04 21:21:46 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/10 15:14:23 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main(void)
 {
-	std::cout << std::endl << "-----> SUBJECT TEST <-----" << std::endl;
+	std::cout << std::endl << "\033[38;5;46m#########  TESTS FROM THE SUBJECT  #########\033[0m" << std::endl;
 	std::cout << std::endl;
 
 	const Animal* meta = new Animal();
@@ -36,7 +36,7 @@ int main(void)
 	wrongCat->makeSound();
 	std::cout << std::endl;
 
-	std::cout << std::endl << "-----> PERSONAL TESTS <-----" << std::endl;
+	std::cout << std::endl << "\033[38;5;211m#########  ADDITIONAL TESTS  #########\033[0m" << std::endl;
 	std::cout << std::endl;
 	Cat cat;
 	Cat copyOfCat(cat);
@@ -52,7 +52,7 @@ int main(void)
 	dogOperatorCopy.makeSound();
 	std::cout << std::endl;
 
-	std::cout << "-----> DESTRUCTIONS <-----" << std::endl;
+	std::cout << "\033[38;5;202m#########  DESTRUCTION  #########\033[0m" << std::endl;
 	std::cout << std::endl;
 	
 	return (0);

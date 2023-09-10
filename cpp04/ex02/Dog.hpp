@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 21:01:48 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 15:09:52 by mbardett         ###   ########.fr       */
+/*   Created: 2023/09/04 17:33:13 by mbardett          #+#    #+#             */
+/*   Updated: 2023/09/10 18:43:13 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include <iostream>
+#include "Animal.hpp"
 
-class WrongAnimal 
+class Dog : public Animal
 {
 	public:
-		WrongAnimal(void);
-		WrongAnimal(const WrongAnimal &source);
-		WrongAnimal &operator=(const WrongAnimal &source);
-		virtual ~WrongAnimal();
-		void makeSound(void) const;
-		std::string getType(void) const;
-		void setType(std::string type);
-	protected:
-		std::string _type;
+		Dog();
+		virtual ~Dog();
+		Dog(const Dog &source);
+		Dog &operator=(const Dog &source);
+		virtual void makeSound()const;
+		std::string getType()const;
+		void printIdeas();
+
+	private:
+		Brain *_brain;
 };
 
 #endif

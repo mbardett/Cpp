@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 17:33:13 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 14:54:42 by mbardett         ###   ########.fr       */
+/*   Created: 2023/09/04 17:31:52 by mbardett          #+#    #+#             */
+/*   Updated: 2023/09/10 17:43:35 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 #include "Animal.hpp"
 
-class Dog : public Animal
+//from cppreference.com/w/cpp/language/destructor:
+//Virtual destructors:
+//Deleting an object through pointer to base invokes undefined behavior 
+//unless the destructor in the base class is virtual:
+
+class Cat : public Animal
 {
 	public:
-		Dog();
-		~Dog();
-		Dog(const Dog &source);
-		Dog &operator=(const Dog &source);
+		Cat();
+		virtual ~Cat();
+		Cat(const Cat &source);
+		Cat &operator=(const Cat &source);
 		virtual void makeSound()const;
 		std::string getType()const;
-	protected:
-		std::string _type;
+		void printIdeas();
+
+
+	private:
+		Brain *_brain;
 };
 
 #endif

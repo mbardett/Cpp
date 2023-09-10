@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 21:01:48 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 15:09:52 by mbardett         ###   ########.fr       */
+/*   Created: 2023/09/04 17:31:02 by mbardett          #+#    #+#             */
+/*   Updated: 2023/09/10 16:55:45 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-# include <iostream>
+#include <iostream>
+#include "Brain.hpp"
 
-class WrongAnimal 
+//from cppreference.com/w/cpp/language/destructor:
+//Virtual destructors:
+//Deleting an object through pointer to base invokes undefined behavior 
+//unless the destructor in the base class is virtual:
+
+class Animal
 {
 	public:
-		WrongAnimal(void);
-		WrongAnimal(const WrongAnimal &source);
-		WrongAnimal &operator=(const WrongAnimal &source);
-		virtual ~WrongAnimal();
-		void makeSound(void) const;
-		std::string getType(void) const;
+		Animal();
+		virtual ~Animal();
+		Animal(const Animal &source);
+		Animal &operator=(const Animal &source);
+		virtual void makeSound()const;
+		std::string getType()const;
 		void setType(std::string type);
 	protected:
 		std::string _type;

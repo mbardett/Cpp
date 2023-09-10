@@ -6,13 +6,13 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 19:35:29 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 14:54:31 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/10 17:56:11 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : _type("Dog")
+Dog::Dog() : _brain(new Brain)
 {
 	this->setType("Dog");
 	std::cout << "Default Dog constructor called" << std::endl;
@@ -20,7 +20,8 @@ Dog::Dog() : _type("Dog")
 
 Dog::~Dog()
 {
-	std::cout << "Default dog destructor called" << std::endl;
+	delete (_brain);
+	std::cout << "Default Dog destructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &source) :Animal()
@@ -36,7 +37,7 @@ Dog &Dog::operator=(const Dog &source)
 	return (*this);
 }
 
-void Dog::makeSound() const
+void Dog::makeSound()
 {
 	std::cout << "Dog makes a very scary WOOOOF!" << std::endl;
 }
@@ -44,4 +45,9 @@ void Dog::makeSound() const
 std::string Dog::getType() const
 {
 	return (this->_type);
+}
+
+void Dog::printIdeas()
+{
+	_brain->printIdeas();
 }

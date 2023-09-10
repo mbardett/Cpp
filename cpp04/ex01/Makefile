@@ -6,15 +6,16 @@
 #    By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 15:37:35 by mbardett          #+#    #+#              #
-#    Updated: 2023/09/10 15:21:00 by mbardett         ###   ########.fr        #
+#    Updated: 2023/09/10 18:48:39 by mbardett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Polymorphism
+NAME = "I don't want to set the world on fire"
 
 SRC = Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
+		Brain.cpp \
 		WrongAnimal.cpp \
 		WrongCat.cpp \
 		main.cpp 
@@ -47,7 +48,6 @@ all: $(NAME)
 	@echo "$(RED)With these I spent most of my time, and never was so happy as when feeding and caressing them.$(RESET)"
 	@echo "$(RED)This peculiarity of character grew with my growth, I derived from it one of my principal sources of pleasure.$(RESET)"
 	@echo "$(RED)― Edgar Allan Poe, The Black Cat$(RESET)"
-
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 $(NAME): $(OBJ)
