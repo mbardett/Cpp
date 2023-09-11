@@ -6,7 +6,7 @@
 #    By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 15:37:35 by mbardett          #+#    #+#              #
-#    Updated: 2023/09/10 23:41:13 by mbardett         ###   ########.fr        #
+#    Updated: 2023/09/11 22:34:22 by mbardett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJ = $(SRC:.cpp=.o)
 
 CC = c++
 
-FLAGS = -Wall -Werror -Wextra -std=c++98
+FLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 #setting colors for output print
 #check this lovely page for more info https://en.wikipedia.org/wiki/ANSI_escape_code

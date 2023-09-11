@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 21:07:51 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/11 20:01:46 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/11 23:22:12 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ int	main()
 
 	std::cout << "CREATE MATERIA:" << std::endl;
 	std::cout << "-----------------------" << std::endl;
-	// AMateria	*tmp;
+	AMateria	*tmp = NULL;
 	
 	// AMateria	*tmp1;
 	// AMateria	*tmp2;
 	// AMateria	*tmp3;
 
-	// tmp = src->createMateria("ice");
-	// me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
 	// tmp1 = src->createMateria("cure");
 	// me->equip(tmp1);
 	// tmp = src->createMateria("fire"); // null
@@ -60,7 +60,7 @@ int	main()
 
 	std::cout << "USE ON A NEW CHARACTER:" << std::endl;
 	std::cout << "-----------------------" << std::endl;
-	ICharacter* bob = new Character("bob");
+	ICharacter *bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
 	std::cout << std::endl;
@@ -85,7 +85,7 @@ int	main()
 	std::cout << "-----------------------" << std::endl;
 	charles->unequip(0);
 	charles_copy->unequip(1);
-	// tmp = src->createMateria("cure");
+	tmp = src->createMateria("cure");
 	// charles_copy->equip(tmp);
 	// tmp = src->createMateria("ice");
 	// charles_copy->equip(tmp);
@@ -96,10 +96,10 @@ int	main()
 	charles->use(2, *bob);
 	charles->use(3, *bob);
 	std::cout << std::endl;
-	charles_copy->use(0, *bob);
-	charles_copy->use(1, *bob);
-	charles_copy->use(2, *bob);
-	charles_copy->use(3, *bob);
+	// charles_copy->use(0, *bob);
+	// charles_copy->use(1, *bob);
+	// charles_copy->use(2, *bob);
+	// charles_copy->use(3, *bob);
 	std::cout << std::endl;
 	std::cout << "UNEQUIP:" << std::endl;
 	std::cout << "-----------------------" << std::endl;
@@ -116,7 +116,10 @@ int	main()
 	delete me;
 	src->freeSlots();
 	delete src;
+	std::cout << "Deleted src" << std::endl;
 	delete charles;
+	std::cout << "Deleted charles" << std::endl;
 	delete charles_copy;
+	std::cout << "Deleted charles_copy" << std::endl;
 	return (0);
 }

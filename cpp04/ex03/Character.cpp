@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:49:30 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/11 16:35:52 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/11 23:18:56 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ Character::Character(std::string name) :_name(name)
 }
 Character::~Character()
 {
-	for (int i = 0; i < 4; i++)
-	{
-		if (this->_slots[i])
-			delete this->_slots[i];
-	}
-	std::cout << "Character destructor called"<< std::endl;
+	// for (int i = 0; i < 4; i++)
+	// {
+	// 	if (this->_slots[i])
+	// 		delete this->_slots[i];
+	// }
+	std::cout << "Character destructor called"<<" for "<< this->getName()<< std::endl;
 }
 
-Character::Character(const Character &source)
+Character::Character(const Character &source): _name(source._name)
 {
 	std::cout << "Character copy constructor called" << std::endl;
-	this->_name = source._name;
+	// this->_name = source._name;
 	for (int i = 0; i < 4; i++)
 		this->_slots[i] = source._slots[i];
 }
@@ -51,6 +51,13 @@ Character &Character::operator=(const Character &source)
 	this->_name = source._name;
 	for (int i = 0; i < 4; i++)
 		this->_slots[i] = source._slots[i];
+	// for(int i = 0; i < 4; i++)
+	// {
+	// 	if (this->_slots[i])
+	// 		delete this->_slots[i];
+	// 	if (source._slots[i])
+	// 		this->_slots[i] = (source._slots[i])->clone();
+	// }
 	return (*this);
 }
 
