@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:09:15 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 20:10:24 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:14:37 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class IMateriaSource
 		virtual ~IMateriaSource() {}
 		virtual void learnMateria(AMateria*) = 0;
 		virtual AMateria* createMateria(std::string const & type) = 0;
+		// virtual int freeSlots();
 };
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 22:27:13 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 23:09:22 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/11 17:54:36 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure(): _type("cure")
+Cure::Cure(): AMateria("cure")
 {
 	std::cout << "Default Cure constructor called" << std::endl;
 }
@@ -33,6 +33,11 @@ Cure &Cure::operator=(const Cure &source)
 		return (*this);
 	this->_type = source.getType();
 	return (*this);
+}
+
+Cure::Cure(const std::string &type) : AMateria(type)
+{
+	std::cout << "Custom Cure constructor called" << std::endl;
 }
 
 std::string	const &Cure::getType() const

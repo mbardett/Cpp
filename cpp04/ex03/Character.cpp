@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:49:30 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 23:36:08 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:35:52 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
+	if (idx < 0)
+		return;
 	if (this->_slots[idx])
 		this->_slots[idx]->use(target);
 	else

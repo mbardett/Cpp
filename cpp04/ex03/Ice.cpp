@@ -6,13 +6,13 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 22:51:24 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 23:10:14 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/11 17:54:51 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(): _type("cure")
+Ice::Ice(): AMateria("Ice")
 {
 	std::cout << "Default Ice constructor called" << std::endl;
 }
@@ -35,10 +35,14 @@ Ice &Ice::operator=(const Ice &source)
 	return(*this);
 }
 
-Ice* Ice::clone() const
+Ice::Ice(const std::string &type) : AMateria(type)
 {
-	Ice	*ret = new Ice;
-	return (ret);
+	std::cout << "Custom Ice constructor called" << std::endl;
+}
+
+AMateria* Ice::clone() const
+{
+	return (new Ice(this->getType()));
 }
 
 void	Ice::use(ICharacter& target)

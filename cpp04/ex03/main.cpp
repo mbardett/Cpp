@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 21:07:51 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 23:35:40 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/11 20:01:46 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main()
 		std::cout << std::endl;
 	std::cout << "CONSTRUCTORS:" << std::endl;
 	std::cout << "-----------------------" << std::endl;
-	IMateriaSource* src = new MateriaSource();
+	MateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
@@ -65,8 +65,8 @@ int	main()
 	me->use(1, *bob);
 	std::cout << std::endl;
 	me->use(2, *bob);
-	me->use(-4, *bob);
-	me->use(18, *bob);
+	// me->use(4, *bob);
+	// me->use(18, *bob);
 	std::cout << std::endl;
 
 	std::cout << "DEEP COPY CHARACTER:" << std::endl;
@@ -101,7 +101,6 @@ int	main()
 	charles_copy->use(2, *bob);
 	charles_copy->use(3, *bob);
 	std::cout << std::endl;
-
 	std::cout << "UNEQUIP:" << std::endl;
 	std::cout << "-----------------------" << std::endl;
 	me->unequip(-1);
@@ -112,16 +111,12 @@ int	main()
 	me->unequip(1);
 	me->use(1, *charles);
 	std::cout << std::endl;
-
 	std::cout << "DESTRUCTORS:" << std::endl;
-	std::cout << "-----------------------" << std::endl;
 	delete bob;
 	delete me;
+	src->freeSlots();
 	delete src;
 	delete charles;
 	delete charles_copy;
-	// delete tmp1;
-	// delete tmp2;
-	std::cout << std::endl;
 	return (0);
 }
