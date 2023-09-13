@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 22:25:24 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/11 17:52:09 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:11:00 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Cure : public AMateria
 		Cure &operator=(const Cure &source);
 		Cure(const std::string &type);
 		std::string const &getType() const;
-		Cure *clone() const;
+		AMateria *clone() const;
 		void use(ICharacter& target);
 };
 

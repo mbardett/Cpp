@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 22:51:24 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/11 17:54:51 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/13 21:04:18 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ Ice::Ice(const std::string &type) : AMateria(type)
 
 AMateria* Ice::clone() const
 {
-	return (new Ice(this->getType()));
+	// return (new Ice(this->getType()));
+	return (new Ice("Ice"));
 }
 
 void	Ice::use(ICharacter& target)
 {
-	std::cout << "\033]38;5;123m* shoots an ice bolt at " << target.getName() << " *\033[0m" << std::endl;
+	std::cout << "\033[38;5;123m* shoots an ice bolt at " << target.getName() << " *\033[0m" << std::endl;
 }
 
 const std::string &Ice::getType()const

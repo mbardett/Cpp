@@ -6,13 +6,13 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 22:27:13 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/11 17:54:36 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:54:48 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure(): AMateria("cure")
+Cure::Cure(): AMateria("Cure")
 {
 	std::cout << "Default Cure constructor called" << std::endl;
 }
@@ -45,10 +45,11 @@ std::string	const &Cure::getType() const
 	return (this->_type);
 }
 
-Cure* Cure::clone() const
+AMateria* Cure::clone() const
 {
-	Cure	*ret = new Cure;
-	return (ret);
+	// Cure	*ret = new Cure;
+	// return (ret);
+	return(new Cure("Cure"));
 }
 
 void	Cure::use(ICharacter& target)
