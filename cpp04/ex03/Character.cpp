@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:49:30 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/13 21:18:32 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/14 16:49:28 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Character::Character(const Character &source): _name(source._name)
 {
 	std::cout << "Character copy constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
-		this->_slots[i] = source._slots[i];
+		this->_slots[i] = source._slots[i]->clone();
 }
 
 Character &Character::operator=(const Character &source)
@@ -49,7 +49,7 @@ Character &Character::operator=(const Character &source)
 		return (*this);
 	this->_name = source._name;
 	for (int i = 0; i < 4; i++)
-		this->_slots[i] = source._slots[i];
+		this->_slots[i] = source._slots[i]->clone();
 	return (*this);
 }
 
