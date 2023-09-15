@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:30:44 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/09 22:20:17 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/15 14:36:57 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Animal::Animal()
 
 Animal::~Animal()
 {
-	std::cout << "Default Animal destructor called" << std::endl;
+	std::cout << "					Default Animal destructor called" << std::endl;
 }
 
 Animal::Animal(const Animal &source)

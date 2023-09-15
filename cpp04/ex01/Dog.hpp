@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:33:13 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 17:43:27 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/15 14:08:41 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public Animal
 		virtual ~Dog();
 		Dog(const Dog &source);
 		Dog &operator=(const Dog &source);
-		virtual void makeSound();
+		virtual void makeSound()const;
 		std::string getType()const;
 		void printIdeas();
 

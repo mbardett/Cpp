@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 21:07:51 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/13 22:41:53 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/15 15:19:50 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #include "Character.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+
+//The subject says we can handle unequipped Materias in any way we want as long as there are no leaks;
+//I simply deleted them at the end of the main, but the proper (and more elegant and efficent) way
+// to handle them would be to build another Class to collect the Materias, having them available
+//for Characters to equip them, and then handling their destruction at the end of the program.
+//Or adding a static list, passing it as an argument to the Character's unequip().
+//Thx arbutnar for the insight!
 
 int	main()
 {

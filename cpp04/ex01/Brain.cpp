@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 16:17:24 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 17:53:15 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/15 14:37:16 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Brain::Brain()
 {
-	std::cout << "Default \033[38;5;211mBrain\033[0m constructor called" << std::endl;
+	std::cout << "		Default \033[38;5;211mBrain\033[0m constructor called" << std::endl;
 	setIdeas();
 }
 
@@ -41,7 +41,7 @@ Brain::Brain(const Brain &source)
 
 void Brain::setIdeas()
 {
-	std::cout << "This \033[38;5;211mBrain\033[0m had many ideas!" << std::endl;
+	std::cout << "			This \033[38;5;211mBrain\033[0m had many ideas!" << std::endl;
 	for (int i = 0; i < 100; i++)
 	{
 		this->_ideas[i] = "food";
@@ -53,10 +53,12 @@ std::string Brain::getIdeas(int index)
 	return	this->_ideas[index];
 }
 
+//silencing each ideas output for ease of reading
 void Brain::printIdeas()
 {
-	for (int i = 0; i < 99; i++)
-	{
-		std::cout << "This \033[38;5;211mBrain\033[0m is thinking about " << this->getIdeas(i) << " right now" << std::endl;
-	}
+	// for (int i = 0; i < 99; i++)
+	// {
+	// 	std::cout << "This \033[38;5;211mBrain\033[0m is thinking about " << this->getIdeas(i) << " right now" << std::endl;
+	// }
+	std::cout << "This \033[38;5;211mBrain\033[0m just had a 100 ideas!" << std::endl;
 }

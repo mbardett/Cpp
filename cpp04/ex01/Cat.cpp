@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:44:18 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/10 17:10:15 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/15 14:37:33 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 Cat::Cat():_brain(new Brain)
 {
 	this->setType("Cat");
-	std::cout << "Default Cat constructor called" << std::endl;
+	std::cout << "				Default Cat constructor called" << std::endl;
 }
 
 Cat::~Cat()
 {
 	delete(_brain);
-	std::cout << "Default Cat destructor called" << std::endl;
+	std::cout << "		Default Cat destructor called" << std::endl;
 }
 
 Cat::Cat(const Cat &source) : Animal(source)
