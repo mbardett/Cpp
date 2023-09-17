@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 21:07:51 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/16 22:34:23 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/17 11:21:43 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,12 @@ int main()
 	try
 	{
 		Bureaucrat a = Bureaucrat(145, "Fat Bob");
-		// std::cout << b;
 		Bureaucrat c(a);
 		c.getName();
 		for (int i =0; i < 10; i++)
 		{
 			c.promote(1);
-			// std::cout << c.getGrade() << std::endl;
 		}
-		// std::cout << c;
 	}
 	catch (std::exception &e)
 	{
