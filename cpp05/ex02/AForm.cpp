@@ -6,20 +6,16 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:13:33 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/17 17:21:56 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/22 19:00:16 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-// Form::Form() : _name("Blank Form"), _signed(false), _toSign(150), _toExec(150)
-// {
-// 	this->_name = "Blank Form";
-// 	this->_signed = false;
-// 	this->_toSign = 150;
-// 	this ->_toExec = 150;
-// 	std::cout << "Blank Form Constructor called" << std::endl;
-// }
+AForm::AForm() :_name("Blank Form"), _signed(false), _toSign(150), _toExec(150)
+{
+	std::cout << "Blank Form Constructor called" << std::endl;
+}
 
 
 AForm::AForm(const AForm &source):_name(source._name), _signed(false), _toSign(source._toSign), _toExec(source._toExec)
@@ -67,7 +63,7 @@ bool AForm::isSigned()const
 	return (_signed);
 }
 
-std::string Form::getName()const
+std::string AForm::getName()const
 {
 	return (this->_name);
 }
@@ -105,11 +101,23 @@ void AForm::beSigned(const Bureaucrat &b)
 	}
 }
 
-std::ostream &operator<<(std::ostream &os, const AForm &f)
+void	AForm::execute(const Bureaucrat &executor)const
 {
-	os << "\033[38;5;8mForm registered under name-----> \033[0m" << f.getName() << std::endl;
-	os << "\033[38;5;8mForm has already been signed---> \033[0m" << f.isSigned() << std::endl;	
-	os << "\033[38;5;8mNeeded grade to sign it--------> \033[0m" << f.getToSign() << std::endl;
-	os << "\033[38;5;8mNeeded grade to execute--------> \033[0m" << f.getToExec() << std::endl;
-	return (os);
+	if(this->isSigned())
+	{
+		if (executor.getGrade() <= this->getToExec())
+			this->currentTask();
+		else
+			throw AForm::GradeTooLowException();
+	}
+	else
+		throw "---ERROR: unauthorized forms cannot be executed, please contact your manager---";
 }
+// std::ostream &operator<<(std::ostream &os, const AForm &f)
+// {
+// 	os << "\033[38;5;8mForm registered under name-----> \033[0m" << f.getName() << std::endl;
+// 	os << "\033[38;5;8mForm has already been signed---> \033[0m" << f.isSigned() << std::endl;	
+// 	os << "\033[38;5;8mNeeded grade to sign it--------> \033[0m" << f.getToSign() << std::endl;
+// 	os << "\033[38;5;8mNeeded grade to execute--------> \033[0m" << f.getToExec() << std::endl;
+// 	return (os);
+// }

@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 15:38:18 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/17 16:30:36 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/22 20:41:08 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void Bureaucrat::demote(int amount)
 
 }
 
-void Bureaucrat::signForm(Form &f)
+void Bureaucrat::signForm(AForm &f)
 {
 	if (getGrade() <= f.getToSign())
 	{
@@ -124,6 +124,12 @@ void Bureaucrat::signForm(Form &f)
 	}
 	else
 		throw Bureaucrat::GradeTooLowException();
+}
+
+void Bureaucrat::executeForm(const AForm &f)
+{
+	f.currentTask();
+	std::cout << this->_name << " executed " << f.getName() << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat &b)

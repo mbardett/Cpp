@@ -6,31 +6,31 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:31:01 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/17 17:20:52 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/22 22:48:36 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AFORM_HPP
-#define AFORM_HPP
+# define AFORM_HPP
 
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-// class Form;
+class AForm;
 class Bureaucrat;
 
 class AForm
 {
 
-	private:
+	protected:
 		const std::string _name;
 		bool _signed;
 		const int _toSign;
 		const int _toExec;
 	public:
-		// Form();
+		AForm();
 		AForm(std::string name, int toSign, int toExec);
-		~AForm();
+		virtual ~AForm();
 		AForm(const AForm &source);
 		AForm &operator=(const AForm &source);
 
@@ -57,8 +57,8 @@ class AForm
 					return ("\033[38;5;202mForm Exception: grade too high\033[0m");
 				}
 		};
-	
-
+		void execute(const Bureaucrat &executor)const;
+		void virtual currentTask()const = 0;
 };
 
 std::ostream &operator<<(std::ostream &os, const AForm &f);

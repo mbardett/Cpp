@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 15:38:30 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/17 14:26:29 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/22 20:56:27 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include <iostream>
 #include <stdexcept>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 // #include <exception>
 //in theory, such definition of a class is against the general rules for cpp modules,
 //but in practice, since the subject demands for only Bureaucrat.cpp, hpp and main files,
 //(and, not least, also because I got a bunch of errors until I defined the public members of 
 // the what() member functions) this seems the only way to comply with the subject for this
 //exercise
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -54,7 +54,9 @@ class Bureaucrat
 						return ("\033[38;5;202mBureaucrat Exception: grade too high\033[0m");
 					}
 		};
-		void signForm(Form &f);
+		void signForm(AForm &f);
+		void executeForm(const AForm &f);
+		
 	private:
 		int _grade;
 		const std::string _name;

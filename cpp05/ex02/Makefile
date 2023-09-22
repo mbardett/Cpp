@@ -6,14 +6,15 @@
 #    By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 15:37:35 by mbardett          #+#    #+#              #
-#    Updated: 2023/09/17 15:02:17 by mbardett         ###   ########.fr        #
+#    Updated: 2023/09/22 21:45:06 by mbardett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = "Form up, maggots!"
+NAME = "No, you need form 28B, not 28C..."
 
-SRC = Form.cpp \
+SRC = AForm.cpp \
 		Bureaucrat.cpp \
+		ShrubberyCreationForm.cpp \
 		main.cpp 
 
 OBJ = $(SRC:.cpp=.o)
