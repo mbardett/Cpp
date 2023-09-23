@@ -6,17 +6,18 @@
 #    By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 15:37:35 by mbardett          #+#    #+#              #
-#    Updated: 2023/09/23 19:52:01 by mbardett         ###   ########.fr        #
+#    Updated: 2023/09/23 22:06:10 by mbardett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = "No, you need form 28B, not 28C..."
+NAME = "At least this beats coffee-making"
 
 SRC = AForm.cpp \
 		Bureaucrat.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
 		PresidentialPardonForm.cpp \
+		Intern.cpp \
 		main.cpp 
 
 OBJ = $(SRC:.cpp=.o)

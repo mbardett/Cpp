@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:13:33 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/22 22:43:58 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/09/23 19:45:40 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(): AForm("BlankShrubbery", 150, 150
 }
 
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("ShrubberyCreationForm", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string target): AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
 	std::cout << "Shrubbery Custom Constructor called" << std::endl;
 }
@@ -46,10 +46,13 @@ std::string ShrubberyCreationForm::getTarget() const
 	return this->_target;
 }
 
-void ShrubberyCreationForm::currentTask()
+//the subject
+void ShrubberyCreationForm::currentTask() const
 {
-	std::cout << "						\033[38;5;29m/\\			\033[0m"<< std::endl;
-	std::cout << "					   \033[38;5;29m/  \\    		\033[0m"<< std::endl;
+	std::cout << "-STARTING CURRENT TASK-" << std::endl;
+	std::cout << std::endl;
+	std::cout << "					\033[38;5;29m/\\			\033[0m"<< std::endl;
+	std::cout << "				       \033[38;5;29m/  \\    		\033[0m"<< std::endl;
 	std::cout << "				      \033[38;5;29m/    \\    		\033[0m"<< std::endl;
 	std::cout << "				     \033[38;5;29m/      \\    		\033[0m"<< std::endl;
 	std::cout << "				    \033[38;5;29m/        \\   		\033[0m"<< std::endl;
@@ -58,12 +61,15 @@ void ShrubberyCreationForm::currentTask()
 	std::cout << "				    \033[38;5;29m/        \\   		\033[0m"<< std::endl;
 	std::cout << "				    \033[38;5;29m/        \\   		\033[0m"<< std::endl;
 	std::cout << "				   \033[38;5;29m/__________\\   	\033[0m"<< std::endl;
-	std::cout << "				      \033[38;5;130m|   |   		\033[0m"<< std::endl;
-	std::cout << "				      \033[38;5;130m|   |   		\033[0m"<< std::endl;
-	std::cout << "				      \033[38;5;130m|   |   		\033[0m"<< std::endl;
-	std::cout << "				      \033[38;5;130m|   |   		\033[0m"<< std::endl;
-	std::cout << "				      \033[38;5;130m|   |   		\033[0m"<< std::endl;
-	std::cout << "\033[38;5;28m\033[48;5;130\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \033[0m"<< std::endl;
+	std::cout << "				      \033[38;5;130m|    |  		\033[0m"<< std::endl;
+	std::cout << "				      \033[38;5;130m|    |  		\033[0m"<< std::endl;
+	std::cout << "				      \033[38;5;130m|    |  		\033[0m"<< std::endl;
+	std::cout << "				      \033[38;5;130m|    |  		\033[0m"<< std::endl;
+	std::cout << "				      \033[38;5;130m|    |  		\033[0m"<< std::endl;
+	std::cout << "\033[38;5;28m\033[48;5;130\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \033[0m"<< std::endl;
+
+	std::cout << std::endl;
+	std::cout << "-ENDING CURRENT TASK-" << std::endl;
 
 
 
