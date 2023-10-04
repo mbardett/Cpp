@@ -17,7 +17,7 @@
 # include <cmath>
 
 
-//1): _fracionalBits must be static (because we are dealing with c++98...), otherwise a
+//1): _fractionalBits must be static (because we are dealing with c++98...), otherwise a
 //"in-class initialization of non-static data member is a C++11 exension" WILD ERROR APPEARS
 //2):The subject for this ex01 demands to add an overload function of the "<<"(insertion) operator...
 //In order to make such overload we either need to make it"friend"of the class or to declare 
