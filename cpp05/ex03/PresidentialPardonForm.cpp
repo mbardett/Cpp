@@ -52,7 +52,6 @@ void PresidentialPardonForm::currentTask() const
 	std::cout << std::endl;
 	std::cout << "-STARTING CURRENT TASK-" << std::endl;
 	std::cout << getTarget() << " has been pardoned by Zaphod Beeblebrox!" << std::endl;
-	std::cout << "Pardon failed T_T\033[38;5;51m'\033[0m" << std::endl;
 	std::cout << "-ENDING CURRENT TASK-" << std::endl;
 	std::cout << std::endl;
 }
