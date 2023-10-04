@@ -46,7 +46,8 @@ std::string ShrubberyCreationForm::getTarget() const
 	return this->_target;
 }
 
-//the subject
+//the subject asks for treeS, enphasis on the plural, I added another tree but forgot to push to github,
+//sorry but you'd better add at least another one :)
 void ShrubberyCreationForm::currentTask() const
 {
 	std::cout << "-STARTING CURRENT TASK-" << std::endl;
