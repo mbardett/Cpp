@@ -21,7 +21,7 @@ static std::string types[] = {"char", "int", "float", "double"};
 class ScalarConverter
 {
 	private:
-		// static std::string _literal;
+		// static std::string _literal;  
 	public:
 		ScalarConverter();
 		// ScalarConverter(std::string arg);
