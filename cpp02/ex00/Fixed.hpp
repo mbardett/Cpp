@@ -17,7 +17,7 @@
 # include <cmath>
 
 
-//_fracionalBits must be static (because we are dealing with c++98...), otherwise a
+//_fractionalBits must be static (because we are dealing with c++98...), otherwise a
 //"in-class initialization of non-static data member is a C++11 exension" WILD ERROR APPEARS
 class Fixed
 {
