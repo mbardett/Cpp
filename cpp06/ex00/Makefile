@@ -6,18 +6,13 @@
 #    By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 15:37:35 by mbardett          #+#    #+#              #
-#    Updated: 2023/09/25 15:49:45 by mbardett         ###   ########.fr        #
+#    Updated: 2023/10/10 18:22:58 by mbardett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = "Conversion of scalar types"
 
-SRC = AForm.cpp \
-		Bureaucrat.cpp \
-		ShrubberyCreationForm.cpp \
-		RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp \
-		Intern.cpp \
+SRC = ScalarConverter.cpp\
 		main.cpp 
 
 OBJ = $(SRC:.cpp=.o)

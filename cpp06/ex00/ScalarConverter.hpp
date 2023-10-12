@@ -6,28 +6,42 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:41:18 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/25 21:48:23 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/12 17:23:21 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-// #include <stdlib.h>
+#include <stdlib.h>
 #include <string>
+#include <limits>
+#include <iomanip>
+#include <cstdlib>
 
 
 static std::string nDef[] = {"-inf", "+inf", "nan"};
 static std::string types[] = {"char", "int", "float", "double"};
 
+//the subject asks to define a static class...except we can't...
+
+//from https://www.tutorialspoint.com/how-to-create-a-static-class-in-cplusplus
+
+// "There is no such thing as a static class in C++. The closest approximation is
+// a class that only contains static data members and static methods. Static data 
+// members in a class are shared by all the class objects as there is only one copy 
+// of them in the memory, regardless of the number of objects of the class. 
+// Static methods in a class can only access static data members, other static 
+// methods or any methods outside the class."
+
+//but since module 02 we have to implement the Canonical Orthodox Form and,
+// therefore, "override" constructors, destructor and assignment operator.
+//GUESS WHAT?you can't have static constructors, YAY!
+//
+
+
 class ScalarConverter
 {
-	private:
-		// static std::string _literal;
 	public:
-		ScalarConverter();
-		// ScalarConverter(std::string arg);
-		~ScalarConverter();
-		ScalarConverter(const ScalarConverter &source);
-		ScalarConverter &operator=(const ScalarConverter &source);
+
 		//will see which exceptions are needed as things go on
 		class WrongConvertException : public std::exception
 		{
@@ -43,11 +57,33 @@ class ScalarConverter
 				return "Non displayable";
 			}
 		};
+		static std::string _type;
+		static std::string _literal;
+		static void setType(std::string str);
+		static std::string getType();
 		static std::string checkArg(std::string str);
-		static char toChar(std::string str);
-		static int toInt(std::string str);
-		static float toFloat(std::string str);
-		static double ToDouble(std::string str);
+		static void findType(std::string str);
+		static char fromChar(std::string str);
+		static int fromInt(std::string str);
+		static float fromFloat(std::string str);
+		static double fromDouble(std::string str);
 		static void convert(std::string str);
 		static void myPrint(std::string str);
+		~ScalarConverter();
+//putting constructor etc private, we won't 
+//need them since all the members are going to be static
+	private:
+		
+		//adding this, wanna try something different 
+		//from what I've read so far; the idea is that 
+		//ScalarConverte.toChar(), .toInt() etc etc become void functions
+		//which store the string to convert and print
+		
+		//static std::string myChar;
+		//static std::string myInt;
+		//static std::string myFloat;
+		//static std::string myDouble;
+		ScalarConverter();
+		ScalarConverter(const ScalarConverter &source);
+		ScalarConverter &operator=(const ScalarConverter &source);
 };
