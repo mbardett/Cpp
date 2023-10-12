@@ -52,7 +52,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &source): _grade(source._grade), _name(s
 		throw Bureaucrat::GradeTooHighException();
 		this->_grade = 1;
 	}
-	// getName();
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &source)
@@ -74,7 +73,6 @@ void Bureaucrat::setGrade(int grade)
 
 int Bureaucrat::getGrade()const
 {
-	// std::cout <<  this->_grade << std::endl;
 	return (this->_grade);
 }
 

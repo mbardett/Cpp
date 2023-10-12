@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:41:14 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/12 18:28:23 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/12 18:32:26 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,15 +123,6 @@ void ScalarConverter::findType(std::string str)
 	}
 	setType("int");
 	std::cout << "STOK"<< std::endl;
-	// double myD = std::strtod(str.c_str(), NULL);
-	// if (str.at(str.length() -1) == 'f' && myD > std::numeric_limits<float>::min() && 
-	// 	myD < std::numeric_limits<float>::max())
-	// 		setType("float");
-	// else if (myD > std::numeric_limits<double>::min() && 
-	// 	myD < std::numeric_limits<double>::max())
-	// 		setType("double");
-	// std::cout << "TYPE IS  " << getType() << std::endl;
-
 }
 
 // char ScalarConverter::fromChar(std::string str)

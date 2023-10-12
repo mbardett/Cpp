@@ -16,7 +16,6 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-// class Form;
 class Bureaucrat;
 
 class Form

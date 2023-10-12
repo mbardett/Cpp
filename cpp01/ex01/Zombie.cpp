@@ -12,12 +12,12 @@
 
 #include "Zombie.hpp"
 
-// Zombie::Zombie(std::string name)
-// {
-//     std::cout << "\033[38;5;70ma zombie spawned!\033[0m" << std::endl;
-//     this->_name = name;
-//     return ;
-// }
+Zombie::Zombie(std::string name)
+{
+     std::cout << "\033[38;5;70ma zombie spawned!\033[0m" << std::endl;
+     this->_name = name;
+     return ;
+}
 
 Zombie::~Zombie()
 {

@@ -25,10 +25,6 @@ AForm::AForm(const AForm &source):_name(source._name), _signed(false), _toSign(s
 		throw AForm::GradeTooLowException();
 	if (getToSign() < 1 || getToExec() < 1)
 		throw AForm::GradeTooHighException();
-	// if (this->_toSign > 150 || this->_toExec > 150)
-	// 	throw Form::GradeTooLowException();
-	// if (this->_toSign < 1 || this->_toExec < 1)
-	// 	throw Form::GradeTooHighException();
 }
 
 AForm::~AForm()

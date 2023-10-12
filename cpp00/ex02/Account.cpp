@@ -46,8 +46,8 @@ Account::Account(int first_depo) : _amount(first_depo)
 //deconstructors are called int the opposite order the contructors were,
 //like"first in/last out", we would have to do some magic tricks in order 
 //to achieve the wanted output, like changing the tests file and have the 
-//main file hanlde the outputs currently hanlded by the deconstrtuctor, 
-//but it might be considere cheating and we don't want that, right?
+//main file hanlde the outputs currently handled by the deconstructor, 
+//but it might be considered cheating and we don't want that, right?
 // check the "I" at the end of the subject if any evaluator 
 //wants to ruin your day§
 Account::~Account()

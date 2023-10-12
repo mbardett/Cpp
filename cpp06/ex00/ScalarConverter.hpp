@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:41:18 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/12 17:23:21 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/12 18:35:11 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ static std::string types[] = {"char", "int", "float", "double"};
 
 class ScalarConverter
 {
+	private:
+		// static std::string _literal;  
 	public:
 
 		//will see which exceptions are needed as things go on
