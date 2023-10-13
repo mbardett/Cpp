@@ -6,13 +6,13 @@
 #    By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 15:37:35 by mbardett          #+#    #+#              #
-#    Updated: 2023/10/10 18:22:58 by mbardett         ###   ########.fr        #
+#    Updated: 2023/10/13 17:42:42 by mbardett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = "Conversion of scalar types"
+NAME = convert
 
-SRC = ScalarConverter.cpp\
+SRC = ScalarConverter.cpp \
 		main.cpp 
 
 OBJ = $(SRC:.cpp=.o)

@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:41:18 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/12 18:35:11 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:27:52 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,20 @@ class ScalarConverter
 		};
 		static std::string _type;
 		static std::string _literal;
+		static char _cVal;
+		static int	_iVal;
+		static float	_fVal;
+		static double	_dVal;
 		static void setType(std::string str);
 		static std::string getType();
 		static std::string checkArg(std::string str);
 		static void findType(std::string str);
-		static char fromChar(std::string str);
-		static int fromInt(std::string str);
-		static float fromFloat(std::string str);
-		static double fromDouble(std::string str);
+		static void fromChar(std::string str);
+		static void fromInt(std::string str);
+		static void fromFloat(std::string str);
+		static void fromDouble(std::string str);
 		static void convert(std::string str);
-		static void myPrint(std::string str);
+		static void myPrint();
 		~ScalarConverter();
 //putting constructor etc private, we won't 
 //need them since all the members are going to be static
