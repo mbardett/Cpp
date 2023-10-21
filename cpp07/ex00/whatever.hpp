@@ -1,50 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 21:19:22 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/21 17:28:40 by mbardett         ###   ########.fr       */
+/*   Created: 2023/10/21 21:11:26 by mbardett          #+#    #+#             */
+/*   Updated: 2023/10/21 21:33:07 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
-#include <ctime>
-#include <cstdlib>
 #include <iostream>
-#include <string>
 
-//the subject explicitly says these 4 classes don't have
-// to follow CanonicalOrthodoxForm
-class Base
+template <typename T>
+void swap(T &a, T &b)
 {
-	public:
-			virtual ~Base(){};
-};
+	T tmp;
 
-class A:public Base
+	tmp = a;
+	a = b;
+	b = tmp;
+}
+
+template <typename T>
+T min(T a, T b)
 {
-	// ~A();
-};
+	if (a < b)
+		return a;
+	return b;
+}
 
-class B:public Base
+template <typename T>
+T max(T a, T b)
 {
-	// ~B();
-};
-
-class C:public Base
-{
-	// ~C();
-};
-
-
-
-	Base *generate();
-	void identify(Base *p);
-	void identify(Base &p);
+	if (a > b)
+		return a;
+	return b;
+}
 
 #endif

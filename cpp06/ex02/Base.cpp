@@ -6,31 +6,35 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 21:32:56 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/13 22:54:20 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/21 19:18:22 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
 
+// Base::~Base()
+// {}
+
 Base *generate()
 {
 	int random;
 	srand(time(0));
 	// random = std::rand();
-	random = 1 + (3 * rand()/RAND_MAX +1);
+	random = 1 + ( rand() % 3);
+	std::cout << "RANDOM = "<< random << std::endl;
 	if (random == 1)
-		return new A;
+		return (new A);
 	else if (random == 2)
-		return new B;
+		return (new B);
 	else if (random == 3)
-		return new C;
-	else
-		return NULL;
+		return (new C);
+	return NULL;
 }
 
 void identify(Base *p)
 {
+	
 	if (dynamic_cast<A*>(p))
 		std::cout << "Object type A" << std::endl;
 	else if (dynamic_cast<B*>(p))
