@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 21:11:26 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/21 22:11:57 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/22 12:26:13 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 
-//the subject explicitely says "Templates must be defined in the header files"
+//the subject explicitly says "Templates must be defined in the header files"
 template <typename T>
 void swap(T &a, T &b)
 {

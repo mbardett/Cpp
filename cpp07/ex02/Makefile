@@ -6,12 +6,12 @@
 #    By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 21:09:59 by mbardett          #+#    #+#              #
-#    Updated: 2023/10/22 15:32:25 by mbardett         ###   ########.fr        #
+#    Updated: 2023/10/22 15:33:28 by mbardett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = "Start with a few functions"
+NAME = Array
 
 SRC = 	main.cpp \
 
@@ -41,7 +41,7 @@ GREY = \033[38;5;252m
 	@$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
-	@echo "$(RED)YOU THOUGHT YOU WERE DONE WITH SORTING, DIDN'T YOU?$(RESET)"
+	@echo "$(LBLUE)We are having dejavoos, aren't we?$(RESET)"
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 $(NAME): $(OBJ)
