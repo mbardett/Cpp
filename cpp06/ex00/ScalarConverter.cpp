@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:41:14 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/13 18:20:01 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/24 18:58:17 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,17 @@ std::string ScalarConverter::checkArg(std::string str)
 {
 	std::string tmp;
 	tmp = str;
-	if (str[str.length() -1] == 'f' && str[str.length() -2] == 'f')
+	if ((str[str.length() -1] == 'f' && str[str.length() -2] == 'f') || !str.compare("nanf"))
 	{
 
 		tmp = str.substr(0, str.length()-1);
 	}
 	for (int i = 0; i < 3; i++)
 	{
-		if (tmp == nDef[i])
+		
+		if (!tmp.compare(nDef[i]))
 			return(nDef[i]);
+
 	}
 	return (tmp);
 }
@@ -102,12 +104,16 @@ void ScalarConverter::findType(std::string str)
 			else if (myD > std::numeric_limits<double>::min() && 
 				myD < std::numeric_limits<double>::max())
 				{
+				
 					setType("double");
 					return;
 				}
 		}
 	}
-	for (long i = 0; i < (long)str.size(); i++)
+	int sign = 0;
+	if (str.at(0) == '-' || str.at(0) == '+')
+			sign = 1;
+	for (long i = 0 + sign; i < (long)str.size(); i++)
 	{
 		if (!std::isdigit(str.at(i)))
 		{
@@ -121,8 +127,6 @@ void ScalarConverter::findType(std::string str)
 			setType("int");
 			return;
 		}
-	else
-		setType("wrong");
 }
 
 void ScalarConverter::fromChar(std::string str)
@@ -174,36 +178,28 @@ void ScalarConverter::convert(std::string str)
 
 void ScalarConverter::myPrint()
 {
-	std::string cOut ;
+	std::string cOut;
 	std::string iOut;
 	std::string fOut;
 	std::string dOut;
-	// std::cout << "DETECTED TYPE IS "<< _type << std::endl;
-	// std::cout << "DEBUG, cVal = " << _cVal << ", iVal = " << _iVal << ", fVal = "<<_fVal << ", dVal = " << _dVal << std::endl;
 	int i = 0;
-	if (!_type.compare("wrong"))
-	{
-		std::cout << "One or more type conversions cannot be handled" << std::endl;
-		std::cout << "Reason: type limit exceeded. Exiting Program" << std::endl;
-		return;
-	}
+	if (!std::isprint(_cVal) || strtol(_literal.c_str(), NULL, 0) > 126 || 
+		strtol(_literal.c_str(), NULL, 0) < 33)
+			cOut ="Non displayable";
 	for(i = 0; i < 3; i++)
 	{
-		if (!_literal.compare(nDef[i]))
+		if (!_literal.compare(nDef[i]) || strtol(_literal.c_str(), NULL, 0) < 0 || strtol(_literal.c_str(), NULL, 0) > 127)
 		{
 			cOut = "impossible";
 			break;
 		}
-		else
+		else if (cOut.compare("Non displayable"))
 			cOut = _cVal;
 	}
-	if (!std::isprint(_cVal) || strtol(_literal.c_str(), NULL, 0) > 126 || 
-		strtol(_literal.c_str(), NULL, 0) < 33)
-			cOut ="Non displayable";
 	std::cout << "char: " << cOut << std::endl;
 	for(i = 0; i < 3; i++)
 	{
-		if (!_literal.compare(nDef[i]))
+		if (!_literal.compare(nDef[i]) || !_literal.compare("inf"))
 		{
 			iOut = "impossible";
 			std::cout << "int: " << iOut << std::endl;
@@ -214,10 +210,16 @@ void ScalarConverter::myPrint()
 		std::cout << "int: " << _iVal << std::endl;
 	for(i = 0; i < 3; i++)
 	{
+		if (!_literal.compare("inf"))
+		{
+			fOut = "inf";
+			std::cout << "float: " << fOut << "f" << std::endl;
+			break;
+		}
 		if (!_literal.compare(nDef[i]))
 		{
 			fOut = nDef[i];
-			std::cout << "float: " << fOut  << std::endl;
+			std::cout << "float: " << fOut << "f" << std::endl;
 			break;
 		}
 	}
@@ -225,6 +227,12 @@ void ScalarConverter::myPrint()
 		std::cout << "float: " << std::fixed << std::setprecision(1) << _fVal << "f" << std::endl;
 	for(i = 0; i < 3; i++)
 	{
+		if (!_literal.compare("inf"))
+		{
+			dOut = "inf";
+			std::cout << "double: " << dOut  << std::endl;
+			break;
+		}
 		if (!_literal.compare(nDef[i]))
 		{
 			dOut = nDef[i];

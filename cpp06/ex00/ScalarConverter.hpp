@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:41:18 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/13 17:27:52 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/24 18:56:38 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ static std::string types[] = {"char", "int", "float", "double"};
 
 class ScalarConverter
 {
-	private:
-		// static std::string _literal;  
 	public:
 
 		//will see which exceptions are needed as things go on
@@ -75,21 +73,11 @@ class ScalarConverter
 		static void fromDouble(std::string str);
 		static void convert(std::string str);
 		static void myPrint();
-		~ScalarConverter();
 //putting constructor etc private, we won't 
 //need them since all the members are going to be static
 	private:
-		
-		//adding this, wanna try something different 
-		//from what I've read so far; the idea is that 
-		//ScalarConverte.toChar(), .toInt() etc etc become void functions
-		//which store the string to convert and print
-		
-		//static std::string myChar;
-		//static std::string myInt;
-		//static std::string myFloat;
-		//static std::string myDouble;
 		ScalarConverter();
+		~ScalarConverter();
 		ScalarConverter(const ScalarConverter &source);
 		ScalarConverter &operator=(const ScalarConverter &source);
 };
