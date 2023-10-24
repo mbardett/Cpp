@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 18:55:40 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/13 20:37:51 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/24 21:26:50 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ class Serializer
 	public:
 		static uintptr_t serialize(Data *ptr);
 		static Data* deserialize(uintptr_t rawVal);
-		Serializer();
-		~Serializer();
-		Serializer(const Serializer &source);
-		Serializer &operator=(const Serializer &source);
 	private:
+			Serializer();
+			~Serializer();
+			Serializer(const Serializer &source);
+			Serializer &operator=(const Serializer &source);
 };
 
 #endif
