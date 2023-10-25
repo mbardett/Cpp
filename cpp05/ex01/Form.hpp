@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:31:01 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/17 17:17:23 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:58:19 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ class Form
 {
 
 	private:
-		Form();
 		const std::string _name;
 		bool _signed;
 		const int _toSign;
 		const int _toExec;
 	public:
+		Form();
 		Form(std::string name, int toSign, int toExec);
 		~Form();
 		Form(const Form &source);

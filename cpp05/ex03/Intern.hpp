@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 20:44:25 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/23 22:17:29 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:11:46 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,23 @@
 class Intern
 {
 	public:
-		Intern();
-		~Intern();
-		Intern(const Intern &source);
-		Intern &operator=(const Intern &source);
-		AForm *makeForm(std::string name, std::string target);
-		//public, because you can call an Intern anyway you want!
-		std::string name;
-		class NoMorePaperException: public std::exception
-		{
-			public:
-			virtual const char *what() const throw()
+			Intern();
+			~Intern();
+			Intern(const Intern &source);
+			Intern &operator=(const Intern &source);
+			AForm *makeForm(std::string name, std::string target);
+			//public, because you can call an Intern anyway you want!
+			std::string name;
+			class NoMorePaperException: public std::exception
 			{
-				return ("Oh no!, it seems we are out of printing papers!");
-			}
-		};
+				public:
+				virtual const char *what() const throw()
+				{
+					return ("Oh no!, it seems we are out of printing papers!");
+				}
+			};
 	private:
+			static std::string const _knownForms[3];
 	//to do a proper cleaning before going home,
 	//hiding from the Boss all the papers we used
 	//we would need an array, with its index, for each type 
@@ -52,7 +53,6 @@ class Intern
 
 	
 	//to keep note of already known forms
-	static std::string const _knownForms[3];
 };
 
 #endif

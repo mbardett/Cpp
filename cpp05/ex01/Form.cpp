@@ -6,20 +6,20 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:13:33 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/22 17:16:19 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:03:15 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-// Form::Form() : _name("Blank Form"), _signed(false), _toSign(150), _toExec(150)
-// {
-// 	this->_name = "Blank Form";
-// 	this->_signed = false;
-// 	this->_toSign = 150;
-// 	this ->_toExec = 150;
-// 	std::cout << "Blank Form Constructor called" << std::endl;
-// }
+Form::Form() : _name("Blank Form"), _signed(false), _toSign(150), _toExec(150)
+{
+	// this->_name = "Blank Form";
+	// this->_signed = false;
+	// this->_toSign = 150;
+	// this->_toExec = 150;
+	std::cout << "Blank Form Constructor called" << std::endl;
+}
 
 
 Form::Form(const Form &source):_name(source._name), _signed(false), _toSign(source._toSign), _toExec(source._toExec)
@@ -87,7 +87,6 @@ void Form::beSigned(const Bureaucrat &b)
 			if (this->_signed == false)
 			{
 				this->_signed = true;
-				// std::cout << b.getName()<< " joyfully signed form "<< this->getName() << std::endl;
 			}
 			else
 				throw "No room nor need for additional signs!";
