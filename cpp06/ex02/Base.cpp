@@ -6,21 +6,16 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 21:32:56 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/21 19:18:22 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/25 19:28:08 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-
-// Base::~Base()
-// {}
-
 Base *generate()
 {
 	int random;
 	srand(time(0));
-	// random = std::rand();
 	random = 1 + ( rand() % 3);
 	std::cout << "RANDOM = "<< random << std::endl;
 	if (random == 1)
@@ -35,13 +30,14 @@ Base *generate()
 void identify(Base *p)
 {
 	
-	if (dynamic_cast<A*>(p))
+	if (dynamic_cast<A*>(p)!= NULL)
 		std::cout << "Object type A" << std::endl;
-	else if (dynamic_cast<B*>(p))
+	else if (dynamic_cast<B*>(p)!= NULL)
 		std::cout << "Object type B" << std::endl;
-	if (dynamic_cast<C*>(p))
+	if (dynamic_cast<C*>(p)!= NULL)
 		std::cout << "Object type C" << std::endl;
 }
+
 //from https://docs.oracle.com/cd/E19205-01/819-5267/bkahm/index.html
 //A dynamic_cast to a reference type requires an exception to be thrown 
 //if the conversion is found at run time to be invalid.
@@ -53,7 +49,7 @@ void identify(Base &p)
 	{
 		A &a = dynamic_cast<A&>(p);
 		std::cout << "Referenced type is A" << std::endl;
-		//silencing a  for -Wunused-variable
+		//silencing a for -Wunused-variable
 		(void)a;
 	}
 	catch (std::exception &e)
@@ -81,7 +77,6 @@ void identify(Base &p)
 		}
 	}
 }
-
 
 //dynamic_cast< target-type >( expression )
 //fromm Stackoverflow

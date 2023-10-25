@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:41:14 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/24 18:58:17 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:19:33 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,10 +188,11 @@ void ScalarConverter::myPrint()
 			cOut ="Non displayable";
 	for(i = 0; i < 3; i++)
 	{
-		if (!_literal.compare(nDef[i]) || strtol(_literal.c_str(), NULL, 0) < 0 || strtol(_literal.c_str(), NULL, 0) > 127)
-		{
-			cOut = "impossible";
-			break;
+		if (!_literal.compare(nDef[i]) || strtol(_literal.c_str(), NULL, 0) < 0 || !_literal.compare("inf") ||
+			strtol(_literal.c_str(), NULL, 0) > 127)
+			{
+				cOut = "impossible";
+				break;
 		}
 		else if (cOut.compare("Non displayable"))
 			cOut = _cVal;

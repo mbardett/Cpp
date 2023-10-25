@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 19:04:03 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/24 21:49:46 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:31:49 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,5 @@ uintptr_t Serializer::serialize( Data* ptr )
 Data* Serializer::deserialize( uintptr_t rawVal )
 {
 	std::cout << "\033[38;5;120mDeserialized pointer to "<< reinterpret_cast<Data *>(rawVal)->name << "\033[0m" <<std::endl;
-	// std::cout <<"Pointer deserialied!" << std::endl;
 	return (reinterpret_cast<Data *>(rawVal));
 }
