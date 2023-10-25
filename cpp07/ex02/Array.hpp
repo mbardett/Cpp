@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 18:09:17 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/24 23:03:34 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:39:59 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Array
 			size_t _n;
 			T *_elements;
 	public:
-			Array() {std::cout << "Default Constructor called" << std::endl;}
+			Array() : _n(0), _elements(NULL) {std::cout << "Default Constructor called" << std::endl;}
 			Array(size_t n):_n(n), _elements(NULL) {std::cout << "Custom Constructor called" << std::endl;
 				_elements = new T[n]; for(int i = 0; i < n; i++) _elements[n] = 0}
 			~Array() {std::cout << "Destructor called" << std::endl;}
@@ -33,7 +33,7 @@ class Array
 				for (int i = 0; i < this->_n; i++) this->_elements[i] = src._elements[i];
 				std::cout << "Assignment Operator called"<< std::endl; return *this;}
 			//the [] operator MIGHT accept negative values as long as they are inside the array range, check link below
-			T &operator[](int index) { if index < 0 || index >= this.size()( throw std::out_of_range("Index out of bounds"));}
+			T &operator[](int index) { if index < 0 || index >= this.size()( throw std::out_of_range("Index out of bounds")); return (_elements[index])}
 			size_t size() {return this->_n;}
 	};
 
