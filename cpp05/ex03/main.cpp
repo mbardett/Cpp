@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 21:07:51 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/23 22:59:57 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:48:18 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main()
 	std::cout << "TEST CORRECT FORM CREATION " << std::endl;
 	std::cout << std::endl;
 	n = l.makeForm("ShrubberyCreationForm", "my target");
-	ShrubberyCreationForm z("japonaise");
+	ShrubberyCreationForm z("NationalPark");
 	Bureaucrat b(1, "Bob IV");
 	b.executeForm(z);
 	std::cout << "This stupid Intern just created"<< n->getName() << std::endl;

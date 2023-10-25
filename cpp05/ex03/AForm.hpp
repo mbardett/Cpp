@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:31:01 by mbardett          #+#    #+#             */
-/*   Updated: 2023/09/23 20:01:55 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:39:11 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,14 @@ class AForm
 				virtual const char *what() const throw()
 				{
 					return ("\033[38;5;221m---ERROR: unuthorized forms cannot be executed, please contact your manager---\033[0m");
+				}
+		};
+		class FormCouldNotOpenFileException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ("\033[38;5;221mForm: CouldNotOpenFileException\033[0m]");
 				}
 		};
 		void execute(const Bureaucrat &executor)const;

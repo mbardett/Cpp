@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 21:07:51 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/25 15:09:23 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:48:06 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main()
 {
 	Bureaucrat	b(1, "Bob");
 	std::cout << "TEST	PROMOTING	RANK		1" << std::endl;
-	ShrubberyCreationForm sForm("National Park");
+	ShrubberyCreationForm sForm("NationalPark");
 	std::cout << sForm.getName() << "---"<< sForm.getToExec()<< "---"<< sForm.getToSign()<< "---"<< std::endl;
 	b.signForm(sForm);
 	sForm.execute(b);

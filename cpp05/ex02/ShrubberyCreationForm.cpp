@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:13:33 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/25 15:08:28 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:44:10 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,24 +50,31 @@ std::string ShrubberyCreationForm::getTarget() const
 //sorry but you'd better add at least another one :)
 void ShrubberyCreationForm::currentTask() const
 {
+	std::ofstream os;
+	std::string filename = (this->getTarget() + "_shrubbery");
+	os.open(filename.c_str(), std::ios::out);
+	if (!os.good())
+		throw FormCouldNotOpenFileException();
 	std::cout << "-STARTING CURRENT TASK-" << std::endl;
-	std::cout << std::endl;
-	std::cout << "					\033[38;5;29m/\\ \\			\033[0m"<< std::endl;
-	std::cout << "				       \033[38;5;29m/  \\ \\    		\033[0m"<< std::endl;
-	std::cout << "				      \033[38;5;29m/    \\ \\    		\033[0m"<< std::endl;
-	std::cout << "				     \033[38;5;29m/      \\ \\    		\033[0m"<< std::endl;
-	std::cout << "				    \033[38;5;29m/        \\ \\   		\033[0m"<< std::endl;
-	std::cout << "				    \033[38;5;29m/        \\ \\   		\033[0m"<< std::endl;
-	std::cout << "				    \033[38;5;29m/        \\ \\   		\033[0m"<< std::endl;
-	std::cout << "				    \033[38;5;29m/        \\ \\   		\033[0m"<< std::endl;
-	std::cout << "				    \033[38;5;29m/        \\ \\   		\033[0m"<< std::endl;
-	std::cout << "				   \033[38;5;29m/__________\\ \\   	\033[0m"<< std::endl;
-	std::cout << "				      \033[38;5;130m|    | | 		\033[0m"<< std::endl;
-	std::cout << "				      \033[38;5;130m|    | | 		\033[0m"<< std::endl;
-	std::cout << "				      \033[38;5;130m|    | | 		\033[0m"<< std::endl;
-	std::cout << "				      \033[38;5;130m|    | | 		\033[0m"<< std::endl;
-	std::cout << "				      \033[38;5;130m|    | | 		\033[0m"<< std::endl;
-	std::cout << "\033[38;5;28m\033[48;5;130\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \033[0m"<< std::endl;
+	os << std::endl;
+	os << "					\033[38;5;29m/\\           \033[38;5;29m/\\\033[0m"<< std::endl;
+	os << "				       \033[38;5;29m/  \\         \033[38;5;29m/  \\\033[0m"<< std::endl;
+	os << "				      \033[38;5;29m/    \\       \033[38;5;29m/    \\   \033[0m"<< std::endl;
+	os << "				     \033[38;5;29m/      \\     \033[38;5;29m/      \\   \033[0m"<< std::endl;
+	os << "				    \033[38;5;29m/        \\   \033[38;5;29m/        \\ \033[0m"<< std::endl;
+	os << "				    \033[38;5;29m/        \\   \033[38;5;29m/        \\ \033[0m"<< std::endl;
+	os << "				    \033[38;5;29m/        \\   \033[38;5;29m/        \\ \033[0m"<< std::endl;
+	os << "				    \033[38;5;29m/        \\   \033[38;5;29m/        \\ \033[0m"<< std::endl;
+	os << "				    \033[38;5;29m/        \\   \033[38;5;29m/        \\ \033[0m"<< std::endl;
+	os << "				   \033[38;5;29m/__________\\ \033[38;5;29m/__________\\  \033[0m"<< std::endl;
+	os << "				      \033[38;5;130m|    |  	   \033[38;5;130m|    |	\033[0m"<< std::endl;
+	os << "				      \033[38;5;130m|    |  	   \033[38;5;130m|    |	\033[0m"<< std::endl;
+	os << "				      \033[38;5;130m|    |  	   \033[38;5;130m|    |	\033[0m"<< std::endl;
+	os << "				      \033[38;5;130m|    |  	   \033[38;5;130m|    |	\033[0m"<< std::endl;
+	os << "				      \033[38;5;130m|    |  	   \033[38;5;130m|    |	\033[0m"<< std::endl;
+	os << "\033[38;5;28m\033[48;5;130\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \033[0m"<< std::endl;
+
+	os.close();
 
 	std::cout << std::endl;
 	std::cout << "-ENDING CURRENT TASK-" << std::endl;
