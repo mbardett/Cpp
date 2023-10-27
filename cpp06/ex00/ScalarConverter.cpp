@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:41:14 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/25 18:19:33 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:19:11 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ void ScalarConverter::findType(std::string str)
 void ScalarConverter::fromChar(std::string str)
 {
 	_cVal = static_cast<char>(str.at(0));
-	_dVal = static_cast<int>(_cVal);
+	_iVal = static_cast<int>(_cVal);
 	_fVal = static_cast<float>(_cVal);
 	_dVal = static_cast<double>(_cVal);
 }

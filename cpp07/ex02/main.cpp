@@ -6,19 +6,34 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:50:14 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/25 22:48:13 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:21:16 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
+class Goodboy 
+{
+	private:
+			std::string _question;
+			std::string _answer;
+	public:
+			std::string getAnswer() {return this->_answer;}
+			std::string getQuestion() {return this->_question;}
+			void setQuestion(const std::string question) {this->_question = question;}
+			void setAnswer(const std::string answer){ this->_answer = answer;}
+			Goodboy &operator=(const Goodboy &src) {if (this ==&src)	return *this; return *this;}
+};
 int main()
 {
 	Array<int> first(3);
 	Array<int> second;
 	std::cout << "\033[38;5;46mPrinting empty array"<< std::endl;
-	for(size_t i = 0; i < first.size(); i++)
+	for(size_t i = 0; i < first.size() ; i++)
+	{
+		std::cout << "PORCODIO "<< i << " , size is "<< first.size() << std::endl;
 		std::cout << first[i] << std::endl;
+	}
 	std::cout << "\033[0m"<<std::endl;
 	for(size_t i = 0; i < first.size(); i++)
 		first.addToArray(6, i);
@@ -35,18 +50,26 @@ int main()
 	std::cout << "\033[0m" << std::endl;
 
 
-	
+	std::cout << "testing int, as subject hint" << std::endl;
+
+	// int *a= new Array<int>();
+	// std::cout << "a value is "<< a[0] << std::endl;
+  	// int * a = new int();
+    // std::cout << *a;
+    // delete a;
+	// std::cout << "a value is "<< myInt[0] << std::endl;
 	Array<double> third(3);
 	Array<double> fourth;
-	std::cout << "\033[38;5;46mPrinting empty third array"<< std::endl;
+	std::cout << "QUACK QUACK"<< std::endl;
+	std::cout << "\033[38;5;46mPrinting empty third array\033[0m"<< std::endl;
 	for(size_t i = 0; i < third.size(); i++)
-		std::cout << std::fixed << std::setprecision(2)<< third[i] << std::endl;
-	std::cout << "\033[0m"<<std::endl;
+		std::cout << std::setprecision(2)<< third[i] << std::endl;
+	// std::cout << "\033[0m"<<std::endl;
 	for(size_t i = 0; i < third.size(); i++)
 		third.addToArray(66.6, i);
 	std::cout << "\033[38;5;123mPrinting third Array after storing values"<< std::endl;
 	for(size_t i = 0; i < third.size(); i++)
-		std::cout << std::fixed << std::setprecision(2) << third[i] << std::endl;
+		std::cout << std::setprecision(2) << third[i] << std::endl;
 	std::cout << "\033[0m" <<std::endl;
 	fourth = third;
 	for(size_t i = 0; i < fourth.size(); i++)
@@ -55,4 +78,10 @@ int main()
 	for(size_t i = 0; i < fourth.size(); i++)
 		std::cout << std::fixed << std::setprecision(2) << fourth[i] << std::endl;
 	std::cout << "\033[0m" << std::endl;
+
+	// Array<Goodboy> doge(2);
+	// doge[0].setQuestion("Who's a good boy?");
+	// doge[0].setAnswer("ARF! ARF!");
+	// doge[1].setQuestion("Who's a good doge?");
+	// doge[1].setAnswer("BARK! BARK!");
 }
