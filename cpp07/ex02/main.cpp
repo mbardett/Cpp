@@ -6,24 +6,65 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:50:14 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/27 16:21:16 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/10/29 18:27:43 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-class Goodboy 
-{
-	private:
-			std::string _question;
-			std::string _answer;
-	public:
-			std::string getAnswer() {return this->_answer;}
-			std::string getQuestion() {return this->_question;}
-			void setQuestion(const std::string question) {this->_question = question;}
-			void setAnswer(const std::string answer){ this->_answer = answer;}
-			Goodboy &operator=(const Goodboy &src) {if (this ==&src)	return *this; return *this;}
-};
+// class Base
+// {
+// 	public:
+// 			Base(int n);
+// 			Base();
+// 			Base(Base & cpy);
+// 			~Base();
+// 			int getN() const;
+// 			void setN(int n);
+// 			Base&	operator=(Base & rhs);
+// 			const Base&	operator=(const Base & rhs);
+// 			Base&	operator+=(Base & rhs);
+// 			Base&	operator+=(int rhs);
+
+// 			bool	operator==(Base const & rhs) const;
+// 			bool	operator!=(Base const & rhs) const;
+// 			bool	operator>(Base const & rhs) const;
+// 			bool	operator<(Base const & rhs) const;
+// 			bool	operator>=(Base const & rhs) const;
+// 			bool	operator<=(Base const & rhs) const;
+
+// 	private:
+// 			int _n;
+// };
+
+// std::ostream&	operator<<(std::ostream& stream, const Base & obj);
+
+
+// 	Base::Base  () :_n(std::rand() %10) {}
+// 	Base::Base  (int n) : _n(n) {}
+// 	Base::Base  (Base & cpy): _n(cpy.getN()) {*this = cpy;}
+// 	Base::~Base () {}
+
+// 	int Base::getN  () const {return this->_n;}
+// 	void Base::setN  (int n) {this->_n = n;}
+
+// 	Base&	Base::operator=(Base & rhs) {_n = rhs.getN();return *this;}
+// 	const Base&	Base::operator=(const Base & rhs) {_n = rhs.getN();return *this;}
+// 	Base&	Base::operator+=(Base & rhs) {_n = _n + rhs.getN();return *this;}
+// 	Base&	Base::operator+=(int rhs) {_n = _n + rhs;return *this;}
+// 	bool	Base::operator==(Base const & rhs) const {return (this->_n == rhs.getN());}
+// 	bool	Base::operator!=(Base const & rhs) const {return (this->_n != rhs.getN());}
+// 	bool	Base::operator>(Base const & rhs) const {return (this->_n > rhs.getN());}
+// 	bool	Base::operator<(Base const & rhs) const {return (this->_n < rhs.getN());}
+// 	bool	Base::operator>=(Base const & rhs) const {return (this->_n >= rhs.getN());}
+// 	bool	Base::operator<=(Base const & rhs) const {return (this->_n <= rhs.getN());}
+
+// std::ostream&	operator<<(std::ostream& stream, const Base & obj)
+// {
+// 	stream << obj.getN();
+// 	return stream;
+// }
+
 int main()
 {
 	Array<int> first(3);
@@ -31,7 +72,7 @@ int main()
 	std::cout << "\033[38;5;46mPrinting empty array"<< std::endl;
 	for(size_t i = 0; i < first.size() ; i++)
 	{
-		std::cout << "PORCODIO "<< i << " , size is "<< first.size() << std::endl;
+		// std::cout << "index "<< i << " , in array of size  "<< first.size() << std::endl;
 		std::cout << first[i] << std::endl;
 	}
 	std::cout << "\033[0m"<<std::endl;
@@ -42,6 +83,10 @@ int main()
 		std::cout << first[i] << std::endl;
 	std::cout << "\033[0m" <<std::endl;
 	second = first;
+	std::cout << "\033[38;5;160m SECOND SIZE\033[0m" << std::endl;
+	std::cout << "\033[38;5;160mPrinting second Array after copy BEFORE storing values\033[0m"<< std::endl;
+	for(size_t i = 0; i < second.size(); i++)
+		std::cout << "\033[38;5;160m" << second[i] << "\033[0m" << std::endl;
 	for(size_t i = 0; i < first.size(); i++)
 		second.addToArray(second[i] + 6, i);
 	std::cout << "\033[38;5;211mPrinting second Array after storing values"<< std::endl;
@@ -50,38 +95,18 @@ int main()
 	std::cout << "\033[0m" << std::endl;
 
 
-	std::cout << "testing int, as subject hint" << std::endl;
+	
+	// std::cout << "TESTING WITH CUSTOM CLASS" << std::endl;
 
-	// int *a= new Array<int>();
-	// std::cout << "a value is "<< a[0] << std::endl;
-  	// int * a = new int();
-    // std::cout << *a;
-    // delete a;
-	// std::cout << "a value is "<< myInt[0] << std::endl;
-	Array<double> third(3);
-	Array<double> fourth;
-	std::cout << "QUACK QUACK"<< std::endl;
-	std::cout << "\033[38;5;46mPrinting empty third array\033[0m"<< std::endl;
-	for(size_t i = 0; i < third.size(); i++)
-		std::cout << std::setprecision(2)<< third[i] << std::endl;
-	// std::cout << "\033[0m"<<std::endl;
-	for(size_t i = 0; i < third.size(); i++)
-		third.addToArray(66.6, i);
-	std::cout << "\033[38;5;123mPrinting third Array after storing values"<< std::endl;
-	for(size_t i = 0; i < third.size(); i++)
-		std::cout << std::setprecision(2) << third[i] << std::endl;
-	std::cout << "\033[0m" <<std::endl;
-	fourth = third;
-	for(size_t i = 0; i < fourth.size(); i++)
-		fourth.addToArray((fourth[i] + 33.3), i);
-	std::cout << "\033[38;5;211mPrinting fourth Array after storing values"<< std::endl;
-	for(size_t i = 0; i < fourth.size(); i++)
-		std::cout << std::fixed << std::setprecision(2) << fourth[i] << std::endl;
-	std::cout << "\033[0m" << std::endl;
-
-	// Array<Goodboy> doge(2);
-	// doge[0].setQuestion("Who's a good boy?");
-	// doge[0].setAnswer("ARF! ARF!");
-	// doge[1].setQuestion("Who's a good doge?");
-	// doge[1].setAnswer("BARK! BARK!");
+	// Array<Base> a(5);
+	// std::cout << "A" << std::endl;
+	// for (size_t i = 0; i < a.size(); i++)
+	// 	a[i] = i;
+	// for (size_t i = 0; i < a.size(); i++)
+	// 	std::cout << "at index "<< i << " = " << a[i] << std::endl;
+	// std::cout << "TEST for copy of complex type" << std::endl;
+	// Array<Base> b;
+	// b = a;
+	// for (size_t i = 0; i < a.size(); i++)
+	// 	std::cout << "B at index "<< i << " = " << b[i] << std::endl;
 }
