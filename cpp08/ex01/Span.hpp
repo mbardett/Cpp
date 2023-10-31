@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 14:07:03 by mbardett          #+#    #+#             */
-/*   Updated: 2023/10/31 22:05:47 by mbardett         ###   ########.fr       */
+/*   Created: 2023/10/31 22:22:02 by mbardett          #+#    #+#             */
+/*   Updated: 2023/10/31 22:46:06 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
 #include <algorithm>
 #include <list>
 #include <exception>
 #include <vector>
 #include <iostream>
-template <typename T>
-std::vector<int>::const_iterator easyfind(T cont, int num) 
+
+class Span
 {
-	std::vector<int>::const_iterator iter;
-	// std::cout << "BACK IS "<< cont.back() << std::endl;
-	for (iter = cont.begin(); iter != cont.end(); iter++)
-	{
-		if (*iter == num){
-			return iter;
-		}
-	}
-	return iter;
-}
+	private:
+		size_t _maxSize;
+		std::list<int> _myData;
+	
+	public:
+		Span(size_t n);
+		~Span();
+		Span(const Span &src);
+		Span &operator=(const Span &src);
+		void addNumber(int n);
+		void addNumber(std::list<int> newList);
+		size_t shortestSpan();
+		size_t longestSpan();
+		size_t getMaxSize();
+		std::list<int> getMyData();
+		
+};
+
 #endif
