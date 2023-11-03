@@ -6,15 +6,14 @@
 #    By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 21:09:59 by mbardett          #+#    #+#              #
-#    Updated: 2023/11/03 20:18:08 by mbardett         ###   ########.fr        #
+#    Updated: 2023/11/03 22:07:42 by mbardett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = Span
+NAME = MutatedAbomination
 
-SRC = 	Span.cpp \
-		main.cpp \
+SRC = 	main.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
