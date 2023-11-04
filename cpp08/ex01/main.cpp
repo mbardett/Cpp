@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:46:06 by mbardett          #+#    #+#             */
-/*   Updated: 2023/11/03 20:44:36 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:48:54 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 	spanny.addNumber(3);
 	spanny.addNumber(17);
 	spanny.addNumber(9);
+	spanny.addNumber(11);
 	std::cout << spanny.longestSpan() << std::endl;
 	if (argc == 1)
 	{
