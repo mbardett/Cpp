@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 19:10:22 by mbardett          #+#    #+#             */
-/*   Updated: 2023/11/04 21:37:56 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/11/05 14:51:17 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	try
 	{
 		BitcoinExchange btc("data.csv");
-		std::cout << "DIOBUBU" << std::endl;
+		// std::cout << "DIOBUBU" << std::endl;
 		btc.exchange(argv[1]);
 	}
 	catch( std::exception const &e )

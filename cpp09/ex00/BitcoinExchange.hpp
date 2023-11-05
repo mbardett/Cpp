@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 19:09:40 by mbardett          #+#    #+#             */
-/*   Updated: 2023/11/04 21:35:39 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/11/05 15:09:10 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class BitcoinExchange {
 		BitcoinExchange& operator=(const BitcoinExchange &src);
 		~BitcoinExchange();
 		
-		int		checkPair(std::string const &date, std::string const &value);
+		int		checkPair(std::string const &date, std::string const &value, int maxValue);
 		void	exchange(const char *filename);
 		typedef	std::map<std::string, double>::iterator iterator;
 		class CannotOpenFile: public std::exception
@@ -49,11 +49,6 @@ class BitcoinExchange {
 		{
 			public:
 				const char* what() const throw() { return ("Error: invalid value in Data set.");}
-		};
-		class	InputError : public std::exception
-		{
-			public:
-				const char* what() const throw() { return ("Error: incorrect, inconsistent, or corrupted Input file.");}
 		};
 };
 
