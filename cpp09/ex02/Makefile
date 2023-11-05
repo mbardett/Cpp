@@ -6,14 +6,14 @@
 #    By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 21:09:59 by mbardett          #+#    #+#              #
-#    Updated: 2023/11/05 15:12:00 by mbardett         ###   ########.fr        #
+#    Updated: 2023/11/05 19:03:23 by mbardett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = btc
+NAME = PmergeMe
 
-SRC = 	BitcoinExchange.cpp \
+SRC = 	PmergeMe.cpp \
 		main.cpp \
 
 OBJ = $(SRC:.cpp=.o)

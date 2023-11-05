@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 19:09:40 by mbardett          #+#    #+#             */
-/*   Updated: 2023/11/05 15:09:10 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/11/05 16:40:27 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ class BitcoinExchange {
 		{
 			public:
 				const char* what() const throw() { return ("Error: invalid value in Data set.");}
+		};
+		class EmptyError : public std::exception
+		{
+			public:
+				const char* what() const throw() {return ("Error:Empty file");}
 		};
 };
 

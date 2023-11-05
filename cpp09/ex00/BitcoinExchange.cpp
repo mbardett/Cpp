@@ -6,7 +6,7 @@
 /*   By: mbardett <mbardett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 19:10:05 by mbardett          #+#    #+#             */
-/*   Updated: 2023/11/05 15:08:35 by mbardett         ###   ########.fr       */
+/*   Updated: 2023/11/05 16:42:23 by mbardett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 BitcoinExchange::BitcoinExchange()
 {
-	std::cout << "Empty constructor called" << std::endl;
+	// std::cout << "Empty constructor called" << std::endl;
 	throw BitcoinExchange::CannotOpenFile();
 }
 
 BitcoinExchange::BitcoinExchange( const char* filename )
 {
-	std::cout << "Custom constructor called" << std::endl;
+	// std::cout << "Custom constructor called" << std::endl;
 	std::ifstream	data(filename);
 	std::string	line;
 	std::string	date;
@@ -45,11 +45,12 @@ BitcoinExchange::BitcoinExchange( const char* filename )
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src ): _exchangeMap (src._exchangeMap)
 {
-	std::cout <<"Copy constructor called" << std::endl;
+	// std::cout <<"Copy constructor called" << std::endl;
 }
 
 BitcoinExchange	&BitcoinExchange::operator=(const BitcoinExchange &src)
 {
+	// std::cout << "Assignment operator called"<< std::endl;
 	if (this != &src)
 		this->_exchangeMap = src._exchangeMap;
 	return (*this);
@@ -102,6 +103,12 @@ void	BitcoinExchange::exchange(const char *filename)
 
 	if (!input.is_open())
 		throw CannotOpenFile();
+	// std::cout << "FIRST CHAR is #"<< input.peek() <<"#" << std::endl;
+	if (input.peek() < 0)
+	{
+		throw EmptyError();
+		return ;
+	}
 	while (std::getline(input, line))
 	{
 		if (line == "date | value")
